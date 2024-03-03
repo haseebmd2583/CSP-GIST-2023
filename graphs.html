@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GRAPHS</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+	.chart-container {
+    		display: flex;
+    		justify-content: center;
+   		align-items: center;
+    		width: 600px; 
+   		height: 600px; 
+  		}
+	h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #FF0000;
+        }
+	.container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+body {
+           background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+}
+main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>GRAPH</h1>
+<main>
+<div class="chart-container">
+<canvas id="bargraph"></canvas>
+<script>
+  // Bar graph data
+  var barGraphData = {
+    labels: ["TOTAL NO. OF PEOPLE IN HOME", "NO. OF PEOPLE GRADUATED", "NO. OF PEOPLE NOT GRADUATED", "NO. OF PEOPLE WHO ARE PURSUING", "NO. OF PEOPLE WHO ARE EMPLOYEED", "NO. OF PEOPLE WHO ARE UNEMPLOYED"],
+    datasets: [
+      {
+        label: "GRAPH",
+        data: [169, 15, 101, 53, 10, 5],
+        backgroundColor: "rgb(106, 90, 205)",
+        borderColor: "rgb(238, 130, 238)",
+        borderWidth: 2,
+      },
+    ],
+  };
+
+  // Create Bar graph
+  var barGraphCtx = document.getElementById("bargraph").getContext("2d");
+  new Chart(barGraphCtx, {
+    type: "bar",
+    data: barGraphData,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+	x: {
+          ticks: {
+            autoSkip: false,
+            maxRotation: 30,
+            minRotation: 30,
+	 },
+        },
+      },
+    },
+  });
+</script>
+</div>
+</main>
+<h2><a href="goto.html">MAIN MENU</a></h2>
+</div>
+</body>
+</html>

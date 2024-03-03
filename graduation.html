@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GRAPHS</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+	.chart-container {
+    		display: flex;
+    		justify-content: center;
+   		align-items: center;
+    		width: 800px; 
+   		height: 500px; 
+  		}
+	h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #FF0000;
+        }
+	.container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+body {
+           background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+}
+main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>GRADUATION CHART</h1>
+<main>
+<p>NO. OF PEOPLE GRADUATED - 12.93%</p>
+<p>NO. OF PEOPLE NOT GRADUATED - 87.07%</p>
+<div class="chart-container">
+<canvas id="myChart"></canvas>
+	<script>
+        var data = {
+            labels: ['NO. OF PEOPLE GRADUATED', 'NO. OF PEOPLE NOT GRADUATED'],
+            datasets: [{
+                data: [12.93, 87.07],
+                backgroundColor: ['#686868', '#FF6384']
+            }]
+        };
+        var options = {
+            responsive: true
+        };
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: options
+        });
+    </script>
+</div>
+<h2><a href="employment.html">EMPLOYMENT CHART</a></h2>
+</main>
+<h2><a href="goto.html">MAIN MENU</a></h2>
+</div>
+</body>
+</html>
